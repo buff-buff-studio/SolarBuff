@@ -24,7 +24,7 @@ namespace ExamplePlatformer.Props
             if (dist > radius)
                 return;
             
-            LevelManager.Instance.ChangeLevel(LevelManager.Instance.levelIndex + 1);
+            LevelManager.Instance.ChangeLevel(LevelManager.Instance.levelIndex.Value + 1);
         }
         
     }

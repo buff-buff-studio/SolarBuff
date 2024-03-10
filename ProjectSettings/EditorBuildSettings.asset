@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: da996ed1a698dd744a016b14ba90d0a3
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
+    path: Assets/Scenes/Old.unity
     guid: 255f07aca21f27849bfc7c9da6e2bf00
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: 17c7187917025a3439401f4d8d09fcd4
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

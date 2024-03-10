@@ -4,6 +4,7 @@ using NetBuff;
 using NetBuff.Components;
 using NetBuff.Interface;
 using NetBuff.Misc;
+using SolarBuff;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -152,30 +153,10 @@ namespace ExamplePlatformer
                 }
             }
 
-            nickname.Value = CreateRandomEnglishName();
+            nickname.Value = TempData.PlayerName;
             bodyColor.Value = Random.ColorHSV(0, 1, 1, 1, 1, 1);
         }
         
-        private string CreateRandomEnglishName()
-        {
-            string[] vowels = {"a", "e", "i", "o", "u"};
-            string[] others = {"jh", "w", "n", "g", "gn", "b", "t", "th", "r", "l", "s", "sh", "k", "m", "d", "f", "v", "z", "p", "j", "ch"};
-
-            var current = "";
-            var b = Random.Range(0, 2) == 0;
-            
-            for (var i = 0; i < Random.Range(3, 10); i++)
-            {
-                if (b)
-                    current += vowels[Random.Range(0, vowels.Length)];
-                else
-                    current += others[Random.Range(0, others.Length)];
-                
-                b = !b;
-            }
-            
-            return current[..1].ToUpper() + current[1..];
-        }
 
         private void Update()
         {
@@ -184,9 +165,6 @@ namespace ExamplePlatformer
                 body.localEulerAngles = new Vector3(0, Mathf.LerpAngle(body.localEulerAngles.y, remoteBodyRotation, Time.deltaTime * 20), 0);
                 return;
             }
-
-            if (Input.GetKeyDown(KeyCode.N))
-                nickname.Value = CreateRandomEnglishName();
             
             if (Input.GetKeyDown(KeyCode.M))
                 bodyColor.Value = Random.ColorHSV(0, 1, 1, 1, 1, 1);
